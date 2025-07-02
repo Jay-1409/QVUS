@@ -44,6 +44,26 @@ ev-rental-app/
 ├── requirements.txt
 └── README.md
 ```
+```mermaid
+flowchart TD
+    A[Start] --> B[User Registers]
+    B --> C[Find Available EV]
+    C --> D[Assign EV & Save User]
+    D --> E[Generate QR Code]
+
+    E --> F[User Scans EV QR to Start Ride]
+    F --> G[Validate User & EV Match]
+    G --> H[Unlock EV & Set Start Time]
+    H --> I[Create Ride Entry]
+
+    I --> J[User Returns EV]
+    J --> K[Record End Time]
+    K --> L[Calculate Duration & Cost]
+    L --> M[Store Ride Summary]
+    M --> N[Reset EV & Delete User]
+    N --> O[Show Drop Success Page]
+    O --> P[End]
+```
 
 ---
 
