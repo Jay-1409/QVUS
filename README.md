@@ -13,7 +13,27 @@ This is a simple, full-stack electric vehicle (EV) rental system built using **F
 - 💵 **Cost Calculation** — Dynamically calculates total cost based on ride duration.
 - 🧾 **Ride Summary** — Stores ride details and billing history.
 - 🗑️ **User Cleanup** — Deletes user data after ride completion.
+```mermaid
+flowchart TD
+    A([Start]) --> B([User Registers])
+    B --> C([Find Available EV])
+    C --> D([Assign EV & Save User])
+    D --> E([Generate QR Code])
+    E --> F([Scan QR to Start Ride])
+    F --> G([Validate User & EV])
+    G --> H([Unlock EV & Set Start Time])
+    H --> I([Create Ride Entry])
+    I --> J([Return EV])
+    J --> K([Record End Time])
+    K --> L([Calculate Duration & Cost])
+    L --> M([Store Ride Summary])
+    M --> N([Reset EV & Delete User])
+    N --> O([Show Drop Success Page])
+    O --> P([End])
 
+    style A,R,P fill:#dff0d8,stroke:#333,stroke-width:1px,rx:15,ry:15
+    style B,C,D,E,F,G,H,I,J,K,L,M,N,O fill:#e7f3fe,stroke:#3c8dbc,rx:10,ry:10
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -44,27 +64,6 @@ ev-rental-app/
 ├── requirements.txt
 └── README.md
 ```
-```mermaid
-flowchart TD
-    A[Start] --> B[User Registers]
-    B --> C[Find Available EV]
-    C --> D[Assign EV & Save User]
-    D --> E[Generate QR Code]
-
-    E --> F[User Scans EV QR to Start Ride]
-    F --> G[Validate User & EV Match]
-    G --> H[Unlock EV & Set Start Time]
-    H --> I[Create Ride Entry]
-
-    I --> J[User Returns EV]
-    J --> K[Record End Time]
-    K --> L[Calculate Duration & Cost]
-    L --> M[Store Ride Summary]
-    M --> N[Reset EV & Delete User]
-    N --> O[Show Drop Success Page]
-    O --> P[End]
-```
-
 ---
 
 ## 🔧 Setup Instructions
